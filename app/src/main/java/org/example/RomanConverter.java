@@ -29,18 +29,20 @@ public class RomanConverter {
             .compile("^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$");
 
     public static String getRomanFromNumber(int a) throws IllegalArgumentException {
-        // TODO
-        for(RomanNumber roman : SYMBOLS) {
-            if(roman.getValue() == a) {
-                return roman.getRoman();
+        String resultat = "";
+        for(RomanNumber romanSymbol : SYMBOLS) {
+            while(a >= romanSymbol.getValue()) {
+                resultat = resultat + romanSymbol.getRoman();
+                a = a - romanSymbol.getValue();
             }
         }
 
-        return "";
+        return resultat;
     }
 
     public static int getNumberFromRoman(String a) throws IllegalArgumentException {
         // TODO
+        
         return 0;
     }
 }
