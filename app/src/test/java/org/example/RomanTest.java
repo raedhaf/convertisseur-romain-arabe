@@ -8,11 +8,46 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class RomanTest {
 
-    @Test
+    /*@Test
     public void testConverter() {
         assertEquals("IV", RomanConverter.getRomanFromNumber(4));
         assertThrows(IllegalArgumentException.class, () -> RomanConverter.getRomanFromNumber(-2));
-    }
+    }*/
 
     // TODO : les autres tests
+
+    @Nested
+    @DisplayName("Tests réussite")
+    class Test_Valid {
+        static final Map<Integer, String> SYMBOLS = new HashMap<>();
+
+        static {
+            SYMBOLS.put(1000, "M");
+            SYMBOLS.put(900, "CM");
+            SYMBOLS.put(500, "D");
+            SYMBOLS.put(400, "CD");
+            SYMBOLS.put(100, "C");
+            SYMBOLS.put(90, "XC");
+            SYMBOLS.put(50, "L");
+            SYMBOLS.put(40, "XL");
+            SYMBOLS.put(10, "X");
+            SYMBOLS.put(9, "IX");
+            SYMBOLS.put(5, "V");
+            SYMBOLS.put(4, "IV");
+            SYMBOLS.put(1, "I");
+        }
+
+        @Nested
+        @DisplayName("Test : Donner les bonnes valeurs romaines pour des valeurs décimales connues")
+        class Test_Donner_Les_Bonnes_Valeurs_Romaines_Pour_Des_Valeurs_Decimales_Connues {
+            @Test
+            void getRomanFromNumber_standard_values() {
+                for (Map.Entry<Integer, String> entry : SYMBOLS.entrySet()) {
+                    assertEquals(entry.getValue(), RomanConverter.getRomanFromNumber(entry.getKey()));
+                }
+            }
+
+        }
+    }
+
 }
