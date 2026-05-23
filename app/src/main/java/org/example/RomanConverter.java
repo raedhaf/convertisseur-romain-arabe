@@ -30,6 +30,12 @@ public class RomanConverter {
 
     public static String getRomanFromNumber(int a) throws IllegalArgumentException {
         // TODO
+        for(RomanNumber roman : SYMBOLS) {
+            if(roman.getValue() == a) {
+                return roman.getRoman();
+            }
+        }
+
         return "";
     }
 
