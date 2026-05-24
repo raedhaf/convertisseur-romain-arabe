@@ -1,6 +1,6 @@
 package org.example;
 
-public class RomanNumber extends Number {
+public class RomanNumber extends Number implements Comparable<Number> {
 
     private String roman;
 
@@ -78,5 +78,10 @@ public class RomanNumber extends Number {
     @Override
     public String toString() {
         return this.getRoman();
+    }
+
+    @Override
+    public int compareTo(Number o) {
+        return 0;
     }
 }

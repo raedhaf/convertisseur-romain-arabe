@@ -200,4 +200,14 @@ class RomanTest {
         }
     }
 
+    @Nested
+    @DisplayName("Tests chiffre romain soit comparable avec n’importe quel autre nombre")
+    class Tests_Chiffre_Romain_Soit_Comparable_Avec_N_Importe_Quel_Autre_Nombre {
+        @Test
+        void test_De_Comparaison_Avec_Une_Valeur_Null() {
+            RomanNumber romanNumber1 = new RomanNumber("I");
+
+            assertThrows(IllegalArgumentException.class, () -> romanNumber1.compareTo(null));
+        }
+    }
 }
