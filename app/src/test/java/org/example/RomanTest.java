@@ -168,4 +168,36 @@ class RomanTest {
             }
         }
     }
+
+    @Nested
+    @DisplayName("Tests des méthodes dans java.lang.Number (toString, toDouble(), etc) for RomanNumber classe")
+    class Test_Methodes_Java_Lang_Number_For_RomanNumber_Class {
+        RomanNumber romanNumber = new RomanNumber("MMCMXCVI");
+
+        @Test
+        void test_intValue() {
+            assertEquals(2996 , romanNumber.intValue());
+        }
+
+        @Test
+        void test_longValue() {
+            assertEquals(2996L, romanNumber.longValue());
+        }
+
+        @Test
+        void test_floatValue() {
+            assertEquals(2996f, romanNumber.floatValue());
+        }
+
+        @Test
+        void test_doubleValue() {
+            assertEquals(2996d, romanNumber.doubleValue());
+        }
+
+        @Test
+        void test_toString() {
+            assertEquals("MMCMXCVI", romanNumber.toString());
+        }
+    }
+
 }
