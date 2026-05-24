@@ -209,5 +209,25 @@ class RomanTest {
 
             assertThrows(NullPointerException.class, () -> romanNumber1.compareTo(null));
         }
-    }
+
+        @Test
+        void test_De_Comparaison_Nombre_Romain_Avec_Un_Autre_Nombre() {
+            RomanNumber romanNumber1 = new RomanNumber("I");
+            RomanNumber romanNumber2 = new RomanNumber("MMMCMXCIX");
+            RomanNumber romanNumber3 = new RomanNumber("MMCMXCVI");
+
+            assertTrue(romanNumber1.compareTo(1) == 0);
+            assertTrue(romanNumber1.compareTo(0f) > 0);
+            assertTrue(romanNumber1.compareTo(-1L) > 0);
+            assertTrue(romanNumber1.compareTo(2d) < 0);
+
+            assertTrue(romanNumber2.compareTo(3999) == 0);
+            assertTrue(romanNumber2.compareTo(3998f) > 0);
+            assertTrue(romanNumber1.compareTo(4000L) < 0);
+
+            assertTrue(romanNumber3.compareTo(2996) == 0);
+            assertTrue(romanNumber3.compareTo(2995f) > 0);
+            assertTrue(romanNumber3.compareTo(2997d) < 0);
+        }
+    } 
 }
