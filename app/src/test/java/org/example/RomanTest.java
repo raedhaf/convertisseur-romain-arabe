@@ -111,5 +111,50 @@ class RomanTest {
             assertThrows(IllegalArgumentException.class, () -> RomanConverter.getNumberFromRoman(null)); 
         }
 
+        @Test
+        void getNumberFromRoman_Echec_Pour_Des_Valeurs_Avec_Trop_De_Repetitions_De_Symboles() {
+            assertThrows(IllegalArgumentException.class, () -> RomanConverter.getNumberFromRoman("IIII"));
+            assertThrows(IllegalArgumentException.class, () -> RomanConverter.getNumberFromRoman("VV"));
+            assertThrows(IllegalArgumentException.class, () -> RomanConverter.getNumberFromRoman("XXXX"));
+            assertThrows(IllegalArgumentException.class, () -> RomanConverter.getNumberFromRoman("LL"));
+            assertThrows(IllegalArgumentException.class, () -> RomanConverter.getNumberFromRoman("CCCC"));
+            assertThrows(IllegalArgumentException.class, () -> RomanConverter.getNumberFromRoman("DD"));
+            assertThrows(IllegalArgumentException.class, () -> RomanConverter.getNumberFromRoman("MMMM"));
+            assertThrows(IllegalArgumentException.class, () -> RomanConverter.getNumberFromRoman("MCDXXXX"));
+            assertThrows(IllegalArgumentException.class, () -> RomanConverter.getNumberFromRoman("LXLVIIII"));
+        }
+
+        @Test
+        void getNumberFromRoman_Echec_Pour_Des_Valeurs_Avec_Des_Repetitions_De_paires() {
+            assertThrows(IllegalArgumentException.class, () -> RomanConverter.getNumberFromRoman("CMCM"));
+            assertThrows(IllegalArgumentException.class, () -> RomanConverter.getNumberFromRoman("CDCD"));
+            assertThrows(IllegalArgumentException.class, () -> RomanConverter.getNumberFromRoman("XCXC"));
+            assertThrows(IllegalArgumentException.class, () -> RomanConverter.getNumberFromRoman("XLXL"));
+            assertThrows(IllegalArgumentException.class, () -> RomanConverter.getNumberFromRoman("IXIX"));
+            assertThrows(IllegalArgumentException.class, () -> RomanConverter.getNumberFromRoman("IVIV"));
+        }
+
+        @Test
+        void getNumberFromRoman_Echec_Pour_Des_Valeurs_Avec_Des_Antecedents_Incorrects() {
+            assertThrows(IllegalArgumentException.class, () -> RomanConverter.getNumberFromRoman("IM"));
+            assertThrows(IllegalArgumentException.class, () -> RomanConverter.getNumberFromRoman("DM"));
+            assertThrows(IllegalArgumentException.class, () -> RomanConverter.getNumberFromRoman("LM"));
+            assertThrows(IllegalArgumentException.class, () -> RomanConverter.getNumberFromRoman("XM"));
+            assertThrows(IllegalArgumentException.class, () -> RomanConverter.getNumberFromRoman("VM"));
+
+            assertThrows(IllegalArgumentException.class, () -> RomanConverter.getNumberFromRoman("ID"));
+            assertThrows(IllegalArgumentException.class, () -> RomanConverter.getNumberFromRoman("LD"));
+            assertThrows(IllegalArgumentException.class, () -> RomanConverter.getNumberFromRoman("XD"));
+            assertThrows(IllegalArgumentException.class, () -> RomanConverter.getNumberFromRoman("VD"));
+
+            assertThrows(IllegalArgumentException.class, () -> RomanConverter.getNumberFromRoman("IC"));
+            assertThrows(IllegalArgumentException.class, () -> RomanConverter.getNumberFromRoman("VC"));
+
+            assertThrows(IllegalArgumentException.class, () -> RomanConverter.getNumberFromRoman("IL"));
+            assertThrows(IllegalArgumentException.class, () -> RomanConverter.getNumberFromRoman("VL"));
+
+            assertThrows(IllegalArgumentException.class, () -> RomanConverter.getNumberFromRoman("VX"));
+        }
+
     }
 }
