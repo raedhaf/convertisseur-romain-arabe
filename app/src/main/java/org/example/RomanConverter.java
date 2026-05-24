@@ -49,6 +49,10 @@ public class RomanConverter {
     }
 
     public static int getNumberFromRoman(String a) throws IllegalArgumentException {
+        if(a == null) {
+            throw new IllegalArgumentException("Le nombre décimales ne doit pas être null");
+        }
+
         int resultat = 0;
         int index = 0;
         for(RomanNumber romanSymbol : SYMBOLS) {
