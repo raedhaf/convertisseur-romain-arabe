@@ -82,6 +82,9 @@ public class RomanNumber extends Number implements Comparable<Number> {
 
     @Override
     public int compareTo(Number o) {
+        if (o == null) {
+            throw new NullPointerException("Number à comparer est null");
+        }
         return 0;
     }
 }

@@ -207,7 +207,7 @@ class RomanTest {
         void test_De_Comparaison_Avec_Une_Valeur_Null() {
             RomanNumber romanNumber1 = new RomanNumber("I");
 
-            assertThrows(IllegalArgumentException.class, () -> romanNumber1.compareTo(null));
+            assertThrows(NullPointerException.class, () -> romanNumber1.compareTo(null));
         }
     }
 }
