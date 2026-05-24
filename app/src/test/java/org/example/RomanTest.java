@@ -98,5 +98,12 @@ class RomanTest {
             assertThrows(IllegalArgumentException.class, () -> RomanConverter.getRomanFromNumber(-100));
             assertThrows(IllegalArgumentException.class, () -> RomanConverter.getRomanFromNumber(-3999));
         }
+
+        @Test
+        void getRomanFromNumber_Echec_Pour_Des_Valeurs_Hors_Intervalle_1_3999() {
+            assertThrows(IllegalArgumentException.class, () -> RomanConverter.getRomanFromNumber(0));
+            assertThrows(IllegalArgumentException.class, () -> RomanConverter.getRomanFromNumber(4000));
+            assertThrows(IllegalArgumentException.class, () -> RomanConverter.getRomanFromNumber(4999));
+        }
     }
 }
