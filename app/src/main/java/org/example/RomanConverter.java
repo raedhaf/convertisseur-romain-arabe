@@ -29,6 +29,10 @@ public class RomanConverter {
             .compile("^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$");
 
     public static String getRomanFromNumber(int a) throws IllegalArgumentException {
+        if(a < 0) {
+            throw new IllegalArgumentException("Le nombre décimales ne doit pas être négatif");
+        }
+        
         String resultat = "";
         for(RomanNumber romanSymbol : SYMBOLS) {
             while(a >= romanSymbol.getValue()) {
@@ -36,7 +40,7 @@ public class RomanConverter {
                 a = a - romanSymbol.getValue();
             }
         }
-
+        
         return resultat;
     }
 
