@@ -48,8 +48,7 @@ public class RomanNumber extends Number {
      */
     @Override
     public double doubleValue() {
-        // TODO
-        return 0;
+        return (double) this.getValue();
     }
 
     /**
@@ -57,8 +56,7 @@ public class RomanNumber extends Number {
      */
     @Override
     public float floatValue() {
-        // TODO
-        return 0;
+        return (float) this.getValue();
     }
 
     /**
@@ -66,8 +64,7 @@ public class RomanNumber extends Number {
      */
     @Override
     public int intValue() {
-        // TODO
-        return 0;
+        return this.getValue();
     }
 
     /**
@@ -75,13 +72,11 @@ public class RomanNumber extends Number {
      */
     @Override
     public long longValue() {
-        // TODO
-        return 0;
+        return (long) this.getValue();
     }
 
     @Override
     public String toString() {
-        // TODO
-        return "";
+        return this.getRoman();
     }
 }
