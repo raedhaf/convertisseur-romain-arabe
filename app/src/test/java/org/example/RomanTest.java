@@ -74,6 +74,17 @@ class RomanTest {
                 }
             }
 
+            @Test
+            void getNumberFromRoman_known_values() {
+                assertEquals(8, RomanConverter.getNumberFromRoman("VIII"));
+                assertEquals(49, RomanConverter.getNumberFromRoman("XLIX"));
+                assertEquals(944, RomanConverter.getNumberFromRoman("CMXLIV"));
+                assertEquals(1405, RomanConverter.getNumberFromRoman("MCDV"));
+                assertEquals(3901, RomanConverter.getNumberFromRoman("MMMCMI"));
+                assertEquals(2023, RomanConverter.getNumberFromRoman("MMXXIII"));
+                assertEquals(3999, RomanConverter.getNumberFromRoman("MMMCMXCIX"));
+            }
+
         }
     }
 }
