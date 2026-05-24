@@ -159,7 +159,7 @@ class RomanTest {
 
     @Nested
     @DisplayName("Tests de validité")
-    class Test_Validité {
+    class Test_Validite {
 
         @Test
         void getNumberFromRoman_getRomanFromNumber_Pour_Tout_Entier_Inclus_Dans_1_3999() {
