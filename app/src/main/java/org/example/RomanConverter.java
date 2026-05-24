@@ -32,7 +32,11 @@ public class RomanConverter {
         if(a < 0) {
             throw new IllegalArgumentException("Le nombre décimales ne doit pas être négatif");
         }
-        
+
+        if(a < 1 || a > 3999){
+            throw new IllegalArgumentException("Le nombre décimales doit être dans [1;3999]");
+        }
+
         String resultat = "";
         for(RomanNumber romanSymbol : SYMBOLS) {
             while(a >= romanSymbol.getValue()) {
