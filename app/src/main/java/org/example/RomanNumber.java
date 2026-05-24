@@ -85,6 +85,7 @@ public class RomanNumber extends Number implements Comparable<Number> {
         if (o == null) {
             throw new NullPointerException("Number à comparer est null");
         }
-        return 0;
+
+        return Double.compare(this.getValue(), o.doubleValue());
     }
 }
