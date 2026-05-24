@@ -87,4 +87,16 @@ class RomanTest {
 
         }
     }
+
+    @Nested
+    @DisplayName("Tests d'échec")
+    class Test_Echec {
+
+        @Test
+        void getRomanFromNumber_Echec_Pour_Les_Valeurs_Negatives() {
+            assertThrows(IllegalArgumentException.class, () -> RomanConverter.getRomanFromNumber(-1));
+            assertThrows(IllegalArgumentException.class, () -> RomanConverter.getRomanFromNumber(-100));
+            assertThrows(IllegalArgumentException.class, () -> RomanConverter.getRomanFromNumber(-3999));
+        }
+    }
 }
