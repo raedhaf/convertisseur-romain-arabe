@@ -105,5 +105,11 @@ class RomanTest {
             assertThrows(IllegalArgumentException.class, () -> RomanConverter.getRomanFromNumber(4000));
             assertThrows(IllegalArgumentException.class, () -> RomanConverter.getRomanFromNumber(4999));
         }
+
+        @Test
+        void getNumberFromRoman_Echec_Pour_Les_Valeurs_Null() {
+            assertThrows(IllegalArgumentException.class, () -> RomanConverter.getNumberFromRoman(null)); 
+        }
+
     }
 }
