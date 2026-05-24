@@ -63,5 +63,17 @@ class RomanTest {
                 assertEquals("MMMCMXCIX", RomanConverter.getRomanFromNumber(3999));
             }
         }
+
+        @Nested
+        @DisplayName("Test : Donner les bonnes valeurs décimales pour des valeurs romaines connues")
+        class Test_Donner_Les_Bonnes_Valeurs_Decimales_Pour_Des_Valeurs_Romaines_Connues {
+            @Test
+            void getNumberFromRoman_standard_values() {
+                for (Map.Entry<Integer, String> entry : SYMBOLS.entrySet()) {
+                    assertEquals(entry.getKey(), RomanConverter.getNumberFromRoman(entry.getValue()));
+                }
+            }
+
+        }
     }
 }
