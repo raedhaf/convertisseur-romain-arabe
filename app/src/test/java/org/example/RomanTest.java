@@ -155,6 +155,17 @@ class RomanTest {
 
             assertThrows(IllegalArgumentException.class, () -> RomanConverter.getNumberFromRoman("VX"));
         }
+    }
 
+    @Nested
+    @DisplayName("Tests de validité")
+    class Test_Validité {
+
+        @Test
+        void getNumberFromRoman_getRomanFromNumber_Pour_Tout_Entier_Inclus_Dans_1_3999() {
+            for(int i = 1; i <= 3999; i++) {
+                assertEquals(i, RomanConverter.getNumberFromRoman(RomanConverter.getRomanFromNumber(i)));
+            }
+        }
     }
 }
