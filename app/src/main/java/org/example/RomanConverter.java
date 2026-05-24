@@ -41,8 +41,14 @@ public class RomanConverter {
     }
 
     public static int getNumberFromRoman(String a) throws IllegalArgumentException {
-        // TODO
         
+        for(RomanNumber romanSymbol : SYMBOLS) {
+            if(romanSymbol.getRoman().equals(a)) {
+                return romanSymbol.getValue();
+            }
+        }
+
         return 0;
+        
     }
 }
