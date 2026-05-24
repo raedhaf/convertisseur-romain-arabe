@@ -3,6 +3,7 @@ package org.example;
 import java.util.Collection;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 
 public class RomanConverter {
 
@@ -51,6 +52,12 @@ public class RomanConverter {
     public static int getNumberFromRoman(String a) throws IllegalArgumentException {
         if(a == null) {
             throw new IllegalArgumentException("Le nombre décimales ne doit pas être null");
+        }
+
+        Matcher romainMatcher = VALIDATION_RE.matcher(a);
+        if (!romainMatcher.matches()) {
+            throw new IllegalArgumentException("Le chiffre romain doit être valide (pas de repetitions de symboles " +
+                    "et de paires, et pas d'antécédents incorrects)");
         }
 
         int resultat = 0;
